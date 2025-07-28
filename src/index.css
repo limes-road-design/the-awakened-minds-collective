@@ -1,5 +1,95 @@
 @import 'tailwindcss';
-@reference "~/App.css";
+
+@theme {
+  /*
+  Tools for generating a design system:
+  - https://tints.dev/
+  - https://colorpicker.me/
+  - https://uicolors.app/
+  */
+
+  /* Primary colour scale */
+  --color-primary-50: #f6f4fe;
+  --color-primary-100: #edebfc;
+  --color-primary-200: #ded9fb;
+  --color-primary-300: #c6bbf7;
+  --color-primary-400: #a994f1;
+  --color-primary-500: #8b69e9;
+  --color-primary-600: #7b49de;
+  --color-primary-700: #6b37ca;
+  --color-primary-800: #562ca3;
+  --color-primary-900: #4a278b;
+  --color-primary-950: #2d175e;
+
+  /* Success colour scale */
+  --color-success-50: #f1fdf0;
+  --color-success-100: #dffbdd;
+  --color-success-200: #bef6bc;
+  --color-success-300: #6be868;
+  --color-success-400: #50db4d;
+  --color-success-500: #27c225;
+  --color-success-600: #1ba019;
+  --color-success-700: #187e17;
+  --color-success-800: #196318;
+  --color-success-900: #155215;
+  --color-success-950: #062d07;
+
+  /* Warning colour scale */
+  --color-warning-50: #fdfde9;
+  --color-warning-100: #f9fac7;
+  --color-warning-200: #f7f591;
+  --color-warning-300: #f2e852;
+  --color-warning-400: #ecd823;
+  --color-warning-500: #dcbf16;
+  --color-warning-600: #be9710;
+  --color-warning-700: #986d10;
+  --color-warning-800: #7e5715;
+  --color-warning-900: #6c4818;
+  --color-warning-950: #3e250a;
+
+  /* Danger colour scale */
+  --color-danger-50: #fff1f1;
+  --color-danger-100: #ffe4e4;
+  --color-danger-200: #fecdcf;
+  --color-danger-300: #fea3a7;
+  --color-danger-400: #fc7079;
+  --color-danger-500: #f63d4f;
+  --color-danger-600: #e31b38;
+  --color-danger-700: #c0102e;
+  --color-danger-800: #ac1231;
+  --color-danger-900: #89122e;
+  --color-danger-950: #4d0414;
+
+  /* Info colour scale */
+  --color-info-50: #f1f6fd;
+  --color-info-100: #dfebfa;
+  --color-info-200: #c6ddf7;
+  --color-info-300: #9ec7f2;
+  --color-info-400: #68a3e8;
+  --color-info-500: #4f89e2;
+  --color-info-600: #3a6dd6;
+  --color-info-700: #315ac4;
+  --color-info-800: #2e499f;
+  --color-info-900: #2a417e;
+  --color-info-950: #1e2a4d;
+
+  /* Neutral colours */
+  --color-neutral-50: #f7f7f8;
+  --color-neutral-100: #eeeef0;
+  --color-neutral-200: #d9d9de;
+  --color-neutral-300: #b7b7c2;
+  --color-neutral-400: #9091a0;
+  --color-neutral-500: #737584;
+  --color-neutral-600: #5d5e6c;
+  --color-neutral-700: #4c4d58;
+  --color-neutral-800: #41414b;
+  --color-neutral-900: #393941;
+  --color-neutral-950: #25252a;
+
+  /* Fonts */
+  --font-body: 'Inter', 'Helvetica', sans-serif;
+  --font-code: 'DM Mono', 'Courier', monospace;
+}
 
 @layer base {
   #root {
