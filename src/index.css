@@ -1,0 +1,30 @@
+@import 'tailwindcss';
+@reference "~/App.css";
+
+@layer base {
+  #root {
+    @apply h-full;
+    @apply font-body;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    #root {
+      @apply bg-neutral-950;
+      @apply text-primary-50;
+    }
+  }
+
+  @media (prefers-color-scheme: light) {
+    #root {
+      @apply bg-neutral-50;
+      @apply text-primary-950;
+    }
+  }
+
+  html,
+  body {
+    @apply h-full;
+    @apply select-none;
+    @apply font-body;
+  }
+}
