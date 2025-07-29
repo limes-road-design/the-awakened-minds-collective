@@ -34,14 +34,12 @@ export const HomeRoute: FC<HomeRouteProps> = ({ className, ...props }) => {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <g transform="rotate(45 200 200)">
-                <path
-                  d="M270 200 A70 70 0 1 1 200 130 A55 55 0 1 0 270 200"
-                  stroke="#c3ecce"
-                  strokeWidth="2"
-                  fill="none"
-                />
-              </g>
+              <path
+                d="M 260.1041 260.1041 A 85 85 45 1 1 260.1041 139.8959 A 70 70 45 1 0 260.1041 260.1041"
+                stroke="#c3ecce"
+                stroke-width="2"
+                fill="none"
+              />
             </motion.svg>
             <div className="absolute inset-0 flex flex-col justify-center items-center pointer-events-none z-20">
               <span className="font-cursive lowercase text-4xl">The</span>
