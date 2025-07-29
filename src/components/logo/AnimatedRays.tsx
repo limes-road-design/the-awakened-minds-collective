@@ -2,7 +2,7 @@ import { FC, useState, useEffect } from 'react'
 import { twClassMerge } from '~/utils/tailwind'
 import { motion, easeOut } from 'motion/react'
 
-interface DynamicLogoProps extends React.HTMLAttributes<HTMLDivElement> {
+interface AnimatedRaysProps extends React.HTMLAttributes<HTMLDivElement> {
   // Custom props go here
   rayCount?: number
   startRadius?: number // Margin from centre point (start of the line)
@@ -46,7 +46,7 @@ interface Ray {
   endY?: number
 }
 
-export const DynamicLogo: FC<DynamicLogoProps> = ({
+export const AnimatedRays: FC<AnimatedRaysProps> = ({
   rayCount = 12,
   startRadius = 150,
   minEndRadius = 275,
