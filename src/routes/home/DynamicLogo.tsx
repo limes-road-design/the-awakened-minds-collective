@@ -291,6 +291,7 @@ export const DynamicLogo: FC<DynamicLogoProps> = ({
         height={svgHeight}
         viewBox={`0 0 ${svgWidth} ${svgHeight}`}
         xmlns="http://www.w3.org/2000/svg"
+        pointerEvents="none"
         animate={{ rotate: 360 }}
         transition={{ duration: transitionDuration, repeat: Infinity, ease: 'linear' }}
         variants={containerVariants}
