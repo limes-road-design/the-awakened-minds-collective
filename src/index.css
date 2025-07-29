@@ -64,6 +64,7 @@
     @apply focus:text-primary-800;
     @apply underline;
     @apply hover:decoration-2;
+    @apply hover:cursor-pointer;
   }
 }
 
