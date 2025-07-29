@@ -13,9 +13,9 @@ export const HomeRoute: FC<HomeRouteProps> = ({ className, ...props }) => {
   return (
     <div className={twClassMerge(className, '')} {...props}>
       <div className="grid grid-cols-3">
-        <div id="left" className="flex flex-col justify-center items-center p-10"></div>
-        <div id="center" className="flex flex-col justify-center items-center">
-          <div id="logo" className="relative flex flex-1 justify-center items-center p-10">
+        <div id="left" className="flex flex-col justify-center items-center"></div>
+        <div id="center" className="flex flex-col justify-center items-center p-2">
+          <div id="logo" className="relative flex flex-1 justify-center items-center">
             <DynamicLogo
               rayCount={47}
               rotationSpeed={0.1}
@@ -49,7 +49,7 @@ export const HomeRoute: FC<HomeRouteProps> = ({ className, ...props }) => {
               <span className="font-cursive lowercase text-5xl">Minds Collective</span>
             </div>
           </div>
-          <div id="socials" className="flex gap-4">
+          <div id="socials" className="flex gap-4 -mt-10 z-30 relative">
             <a
               className="size-10"
               href="https://instagram.com/theawakenedmindscollective"
@@ -76,7 +76,7 @@ export const HomeRoute: FC<HomeRouteProps> = ({ className, ...props }) => {
             </a>
           </div>
         </div>
-        <div id="right" className="flex flex-col justify-center items-center p-10"></div>
+        <div id="right" className="flex flex-col justify-center items-center p-2"></div>
       </div>
     </div>
   )
