@@ -1,7 +1,7 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-empty-object-type */
-import { FC } from 'react'
+import { FC, ReactNode, useEffect, useRef, useState } from 'react'
 import { twClassMerge } from '~/utils/tailwind'
-
 import { BiLogoInstagram, BiLogoFacebook, BiLogoTiktok } from 'react-icons/bi'
 import { Logo } from '~/components/logo/Logo'
 
@@ -9,16 +9,70 @@ interface HomeRouteProps extends React.HTMLAttributes<HTMLDivElement> {
   // Custom props go here
 }
 
+// Tabs created following tutorial by Emmanuel Alozie
+// https://www.youtube.com/watch?v=JWZHoB5Yaps
+
+interface TabProps {
+  label: string
+  content: ReactNode
+}
+
+const tabs: TabProps[] = [
+  {
+    label: 'Events',
+    content: (
+      <span className="flex flex-col items-center justify-center h-full">
+        <h2>Events</h2>
+      </span>
+    )
+  },
+  {
+    label: 'About Us',
+    content: (
+      <span className="flex flex-col items-center justify-center h-full">
+        <h2>About us</h2>
+      </span>
+    )
+  }
+]
+
 export const HomeRoute: FC<HomeRouteProps> = ({ className, ...props }) => {
+  const tabRef = useRef<HTMLDivElement | null>(null)
+  const [tabWidth, setTabWidth] = useState(0)
+  const [activeTab, setActiveTab] = useState(0)
+
+  const updateTabWidth = () => {
+    if (tabRef.current) {
+      const parentWidth = tabRef.current.getBoundingClientRect().width
+      const tabCount = tabs.length
+      const newTabWidth = parentWidth / tabCount
+      setTabWidth(newTabWidth)
+    }
+  }
+
+  useEffect(() => {
+    const resizeObserver = new ResizeObserver(updateTabWidth)
+
+    if (tabRef.current) {
+      resizeObserver.observe(tabRef.current)
+    }
+
+    return () => {
+      if (tabRef.current) {
+        resizeObserver.unobserve(tabRef.current)
+      }
+    }
+  }, [tabs.length])
+
   return (
-    <div className={twClassMerge(className, '')} {...props}>
-      <div className="grid grid-cols-3">
+    <div className={twClassMerge(className, 'flex flex-col gap-8')} {...props}>
+      <div id="header" className="grid grid-cols-3">
         <div id="left" className="flex flex-col justify-center items-center"></div>
         <div id="center" className="flex flex-col justify-center items-center p-2">
           <Logo />
           <div id="socials" className="flex gap-4 -mt-10 z-30 relative">
             <a
-              className="size-10"
+              className="size-10 transition-colors duration-150"
               href="https://instagram.com/theawakenedmindscollective"
               target="_blank"
               rel="noopener noreferrer"
@@ -26,7 +80,7 @@ export const HomeRoute: FC<HomeRouteProps> = ({ className, ...props }) => {
               <BiLogoInstagram className="size-full" />
             </a>
             <a
-              className="size-10"
+              className="size-10 transition-colors duration-150"
               href="https://facebook.com/profile.php?id=61577785949195"
               target="_blank"
               rel="noopener noreferrer"
@@ -34,7 +88,7 @@ export const HomeRoute: FC<HomeRouteProps> = ({ className, ...props }) => {
               <BiLogoFacebook className="size-full" />
             </a>
             <a
-              className="size-10"
+              className="size-10 transition-colors duration-150"
               href="https://tiktok.com/@awakenedmindscollective"
               target="_blank"
               rel="noopener noreferrer"
@@ -44,6 +98,41 @@ export const HomeRoute: FC<HomeRouteProps> = ({ className, ...props }) => {
           </div>
         </div>
         <div id="right" className="flex flex-col justify-center items-center p-2"></div>
+      </div>
+      <div id="content">
+        <div
+          id="tabs"
+          className="w-full max-w-2xl mx-auto flex items-center justify-between relative rounded-full"
+          ref={tabRef}
+        >
+          {tabs.map((tab, index) => (
+            <button
+              key={index}
+              className="relative py-3 z-10 font-semibold font-serif text-2xl uppercase"
+              style={{
+                width: tabWidth
+              }}
+              onClick={() => {
+                setActiveTab(index)
+              }}
+            >
+              <span className="hover:text-primary-700 hover:cursor-pointer disabled:hover:cursor-not-allowed transition-colors">
+                {tab.label}
+              </span>
+            </button>
+          ))}
+          <div
+            id="tab-indicator"
+            className="absolute left-0 bottom-0 h-0.5 bg-primary-600 transition-all duration-200"
+            style={{
+              width: '4rem',
+              left: activeTab * tabWidth + (tabWidth - 64) / 2
+            }}
+          />
+        </div>
+      </div>
+      <div id="tab-content" className="w-full max-w-2xl mx-auto p-4">
+        {tabs[activeTab].content}
       </div>
     </div>
   )

@@ -60,8 +60,8 @@
 
   a {
     @apply text-primary-700;
-    @apply hover:text-primary-800;
-    @apply focus:text-primary-800;
+    @apply hover:text-primary-600;
+    @apply focus:text-primary-600;
     @apply underline;
     @apply hover:decoration-2;
     @apply hover:cursor-pointer;
