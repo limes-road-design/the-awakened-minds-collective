@@ -1,26 +1,21 @@
-# Dan's React Stack
+# The Awakened Minds Collective
 
-A lightweight template containing everything I typically use in my React projects, including:
+A bespoke website built with:
 
 - React (TypeScript)
 - Vite
 - Tailwind (v4)
+- Netlify
 
 ## Setup
 
-First, degit the repository:
-
-```bash
-npx degit https://github.com/dancreightondev/dans-react-stack project-name
-```
-
-Secondly, install the node modules:
+First, install the node modules:
 
 ```bash
 npm i
 ```
 
-Lastly, run the project using **one** of:
+Then, run the project using **one** of:
 
 ```bash
 npm run dev
@@ -33,3 +28,6 @@ npm run localhost
 ```bash
 npm run network
 ```
+
+---
+© 2025 The Awakened Minds Collective. All rights reserved.
