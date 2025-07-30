@@ -125,7 +125,7 @@ export const HomeRoute: FC<HomeRouteProps> = ({ className, ...props }) => {
             id="tab-indicator"
             className="absolute left-0 bottom-0 h-0.5 bg-primary-600 transition-all duration-200"
             style={{
-              width: '4rem',
+              width: '4.5rem',
               left: activeTab * tabWidth + (tabWidth - 64) / 2
             }}
           />
