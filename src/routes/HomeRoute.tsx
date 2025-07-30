@@ -5,6 +5,7 @@ import { twClassMerge } from '~/utils/tailwind'
 import { BiLogoInstagram, BiLogoFacebook, BiLogoTiktok } from 'react-icons/bi'
 import { Logo } from '~/components/logo/Logo'
 import { AboutTab } from './home/tabs/AboutTab'
+import { EventsTab } from './home/tabs/EventsTab'
 
 interface HomeRouteProps extends React.HTMLAttributes<HTMLDivElement> {
   // Custom props go here
@@ -21,11 +22,7 @@ interface TabProps {
 const tabs: TabProps[] = [
   {
     label: 'Events',
-    content: (
-      <span className="flex flex-col items-center justify-center h-full">
-        <h2>Events</h2>
-      </span>
-    )
+    content: <EventsTab />
   },
   {
     label: 'About Us',
