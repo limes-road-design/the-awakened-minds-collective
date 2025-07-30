@@ -4,6 +4,7 @@ import { FC, ReactNode, useEffect, useRef, useState } from 'react'
 import { twClassMerge } from '~/utils/tailwind'
 import { BiLogoInstagram, BiLogoFacebook, BiLogoTiktok } from 'react-icons/bi'
 import { Logo } from '~/components/logo/Logo'
+import { AboutTab } from './home/tabs/AboutTab'
 
 interface HomeRouteProps extends React.HTMLAttributes<HTMLDivElement> {
   // Custom props go here
@@ -29,9 +30,22 @@ const tabs: TabProps[] = [
   {
     label: 'About Us',
     content: (
-      <span className="flex flex-col items-center justify-center h-full">
-        <h2>About us</h2>
-      </span>
+      <AboutTab
+        testimonials={[
+          {
+            quote:
+              'I cannot tell you how much good last night did. I have woken up with a much better state of mind, thank you xx'
+          },
+          {
+            quote:
+              'Thank you for such a magical night! I have woken up feeling refreshed and so much lighter this morning.'
+          },
+          {
+            quote:
+              "Would highly recommend going to the events. They create a calming and magical atmosphere. They validated my feelings and guided me through my thought process. Can't wait for the next one!"
+          }
+        ]}
+      />
     )
   }
 ]
