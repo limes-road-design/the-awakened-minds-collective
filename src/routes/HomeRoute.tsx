@@ -28,6 +28,22 @@ const tabs: TabProps[] = [
     label: 'About Us',
     content: (
       <AboutTab
+        people={[
+          {
+            name: 'Beth',
+            tagline: 'Co-Founder',
+            summary:
+              "At 30 I realised the life I'd been chasing wasn't the life I truly wanted. So, I left the corporate grind to reconnect with my passions, gifts, and creativity.\nI'm all about manifestation and the transformative practices that have changed my life.",
+            imgSrc: 'https://placehold.co/256?text=Image'
+          },
+          {
+            name: 'Suze',
+            tagline: 'Co-Founder',
+            summary:
+              "I've always believed in the power of women supporting each other. That sense of safety and connection inspired me to create a space for women to amplify their strength and create lasting transformation.",
+            imgSrc: 'https://placehold.co/256?text=Image'
+          }
+        ]}
         testimonials={[
           {
             quote:
