@@ -38,7 +38,19 @@ export const AboutTab: FC<AboutTabProps> = ({ testimonials, people, className, .
           </div>
         </div>
       )}
-      <div id="cta"></div>
+      <div id="cta" className="flex flex-col items-center my-16">
+        <div className="text-center text-2xl font-bold">
+          Join us in our mission to lorem ipsum dolor sit amet...
+        </div>
+        <a
+          href="https://www.eventbrite.co.uk/o/the-awakened-minds-collective-114025583671"
+          className="inline-block mt-4 px-6 py-2 bg-primary-700 text-white rounded hover:bg-primary-800 no-underline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Get Involved
+        </a>
+      </div>
     </div>
   )
 }
