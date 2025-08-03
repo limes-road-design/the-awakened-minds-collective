@@ -27,7 +27,7 @@ export const EventsTab: FC<EventsTabProps> = ({ events, className, ...props }) =
       ) : (
         <div className="text-center justify-center items-center flex flex-col w-full gap-4">
           <span>Sorry, we've not got any events planned at the moment...</span>
-          <div id="cta-buttons" className="flex flex-row gap-4">
+          <div id="cta-buttons" className="flex flex-col sm:flex-row gap-4">
             <a
               href="https://www.eventbrite.co.uk/o/the-awakened-minds-collective-114025583671"
               className="inline-block px-6 py-2 bg-primary-700 text-white rounded hover:bg-primary-800 no-underline transition-colors"
