@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-empty-object-type */
 import { FC, ReactNode, useEffect, useRef, useState } from 'react'
 import { twClassMerge } from '~/utils/tailwind'
-import { Event } from '@shared/types/event'
+//import { Event } from '@shared/types/event'
 import { BiLogoInstagram, BiLogoFacebook, BiLogoTiktok } from 'react-icons/bi'
 import { Logo } from '~/components/logo/Logo'
 import { AboutTab } from './home/tabs/AboutTab'
@@ -21,6 +21,7 @@ interface TabProps {
   content: ReactNode
 }
 
+/*
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const dummyEvents: Event[] = [
   {
@@ -69,6 +70,7 @@ const dummyEvents: Event[] = [
     hide_end_date: false
   }
 ]
+  */
 
 const tabs: TabProps[] = [
   {
