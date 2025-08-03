@@ -6,6 +6,7 @@ import { BiLogoInstagram, BiLogoFacebook, BiLogoTiktok } from 'react-icons/bi'
 import { Logo } from '~/components/logo/Logo'
 import { AboutTab } from './home/tabs/AboutTab'
 import { EventsTab } from './home/tabs/EventsTab'
+import { Footer } from '~/components/Footer'
 
 interface HomeRouteProps extends React.HTMLAttributes<HTMLDivElement> {
   // Custom props go here
@@ -92,7 +93,7 @@ export const HomeRoute: FC<HomeRouteProps> = ({ className, ...props }) => {
   }, [tabs.length])
 
   return (
-    <div className={twClassMerge(className, 'flex flex-col gap-8')} {...props}>
+    <div className={twClassMerge(className, 'flex flex-col gap-8 h-full')} {...props}>
       <div id="header" className="grid grid-cols-3">
         <div id="left" className="flex flex-col justify-center items-center"></div>
         <div id="center" className="flex flex-col justify-center items-center p-2">
@@ -158,9 +159,10 @@ export const HomeRoute: FC<HomeRouteProps> = ({ className, ...props }) => {
           />
         </div>
       </div>
-      <div id="tab-content" className="w-full max-w-2xl mx-auto p-4">
+      <div id="tab-content" className="w-full max-w-2xl mx-auto p-4 flex-1">
         {tabs[activeTab].content}
       </div>
+      <Footer />
     </div>
   )
 }
