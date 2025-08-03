@@ -38,8 +38,8 @@ export const AboutTab: FC<AboutTabProps> = ({ testimonials, people, className, .
           </div>
         </div>
       )}
-      <div id="cta" className="flex flex-col items-center my-16">
-        <div className="text-center text-2xl font-bold">
+      <div id="cta" className="flex flex-col items-center mt-8">
+        <div className="text-center text-2xl font-bold select-text">
           Join us in our mission to lorem ipsum dolor sit amet...
         </div>
         <a
