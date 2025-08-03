@@ -8,7 +8,7 @@ const EVENTBRITE_API_KEY = process.env.EVENTBRITE_API_KEY
 const EVENTBRITE_ORG_ID = '114025583671'
 const BLOB_STORE_NAME = 'events_data'
 
-export default async (req: Request) => {
+export default async (_req: Request) => {
   /*
   const { next_run } = await req.json()
 
