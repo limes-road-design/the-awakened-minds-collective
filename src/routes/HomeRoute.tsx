@@ -21,6 +21,7 @@ interface TabProps {
   content: ReactNode
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const dummyEvents: Event[] = [
   {
     id: '1',
@@ -72,7 +73,7 @@ const dummyEvents: Event[] = [
 const tabs: TabProps[] = [
   {
     label: 'Events',
-    content: <EventsTab events={dummyEvents} />
+    content: <EventsTab events={[]} />
   },
   {
     label: 'About Us',
