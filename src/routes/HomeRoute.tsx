@@ -2,6 +2,7 @@
 /* eslint-disable @typescript-eslint/no-empty-object-type */
 import { FC, ReactNode, useEffect, useRef, useState } from 'react'
 import { twClassMerge } from '~/utils/tailwind'
+import { Event } from '@shared/types/event'
 import { BiLogoInstagram, BiLogoFacebook, BiLogoTiktok } from 'react-icons/bi'
 import { Logo } from '~/components/logo/Logo'
 import { AboutTab } from './home/tabs/AboutTab'
@@ -20,10 +21,58 @@ interface TabProps {
   content: ReactNode
 }
 
+const dummyEvents: Event[] = [
+  {
+    id: '1',
+    name: 'Creative Arts Retreat',
+    start: new Date('2025-12-05T10:00:00Z'),
+    summary: 'A weekend retreat to explore your creative side.',
+    end: new Date('2025-12-07T16:00:00Z'),
+    url: 'https://www.eventbrite.co.uk/o/the-awakened-minds-collective-114025583671',
+    created: new Date(),
+    published: new Date(),
+    status: 'live',
+    currency: 'GBP',
+    online_event: false,
+    hide_start_date: false,
+    hide_end_date: false
+  },
+  {
+    id: '2',
+    name: 'Mindfulness Workshop',
+    start: new Date('2026-01-15T09:00:00Z'),
+    summary: 'Learn mindfulness techniques to improve your well-being.',
+    end: new Date('2026-01-15T12:00:00Z'),
+    url: 'https://www.eventbrite.co.uk/o/the-awakened-minds-collective-114025583671',
+    created: new Date(),
+    published: new Date(),
+    status: 'live',
+    currency: 'GBP',
+    online_event: true,
+    hide_start_date: false,
+    hide_end_date: false
+  },
+  {
+    id: '3',
+    name: 'Yoga and Meditation Retreat',
+    start: new Date('2026-02-20T08:00:00Z'),
+    summary: 'A retreat focused on yoga and meditation practices.',
+    end: new Date('2026-02-22T17:00:00Z'),
+    url: 'https://www.eventbrite.co.uk/o/the-awakened-minds-collective-114025583671',
+    created: new Date(),
+    published: new Date(),
+    status: 'live',
+    currency: 'GBP',
+    online_event: false,
+    hide_start_date: false,
+    hide_end_date: false
+  }
+]
+
 const tabs: TabProps[] = [
   {
     label: 'Events',
-    content: <EventsTab />
+    content: <EventsTab events={dummyEvents} />
   },
   {
     label: 'About Us',
