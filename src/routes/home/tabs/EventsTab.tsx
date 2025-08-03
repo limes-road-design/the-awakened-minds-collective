@@ -9,7 +9,7 @@ interface EventsTabProps extends React.HTMLAttributes<HTMLDivElement> {
   pastPhotos?: string[]
 }
 
-export const EventsTab: FC<EventsTabProps> = ({ events, className, ...props }) => {
+export const EventsTab: FC<EventsTabProps> = ({ events, pastPhotos, className, ...props }) => {
   return (
     <div
       id="events-tab"
@@ -45,7 +45,9 @@ export const EventsTab: FC<EventsTabProps> = ({ events, className, ...props }) =
               Join our mailing list
             </a>
           </div>
-          <div id="past-photos">(Show photos of past events here)</div>
+          {pastPhotos && pastPhotos.length > 0 && (
+            <div id="past-photos">(Show photos of past events here)</div>
+          )}
         </div>
       )}
     </div>
