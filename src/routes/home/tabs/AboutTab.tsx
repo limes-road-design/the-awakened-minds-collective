@@ -18,8 +18,8 @@ export const AboutTab: FC<AboutTabProps> = ({ testimonials, people, className, .
     >
       {people && (
         <div id="people" className="grid grid-cols-1 gap-20 mb-6 select-text">
-          <Bio data={people[0]} align="left" />
-          <Bio data={people[1]} align="right" />
+          <Bio data={people[0]} />
+          <Bio data={people[1]} />
         </div>
       )}
       <div id="mission" className="select-text">
