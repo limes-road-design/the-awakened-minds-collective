@@ -1,28 +1,12 @@
 import type { Config } from '@netlify/functions'
 import { getStore } from '@netlify/blobs'
 import fetch from 'node-fetch'
+import { Event } from '@shared/types/event'
 
 // Env vars
 const EVENTBRITE_API_KEY = process.env.EVENTBRITE_API_KEY
 const EVENTBRITE_ORG_ID = '114025583671'
 const BLOB_STORE_NAME = 'events_data'
-
-interface Event {
-  id: string
-  name: string
-  summary?: string
-  description?: string
-  url: string
-  start: Date
-  end: Date
-  created: Date
-  published: Date
-  status: 'draft' | 'live' | 'started' | 'ended' | 'completed' | 'cancelled'
-  currency: string // always an ISO 4217 currency code
-  online_event: boolean
-  hide_start_date: boolean
-  hide_end_date: boolean
-}
 
 export default async (req: Request) => {
   /*

@@ -21,14 +21,15 @@
     "noFallthroughCasesInSwitch": true,
 
     /* Import path aliases */
-    "baseUrl": "./src",
+    "baseUrl": ".",
     "paths": {
-      "~/assets/*": ["./assets/*"],
-      "~/components/*": ["./components/*"],
-      "~/routes/*": ["./routes/*"],
-      "~/types/*": ["./types/*"],
-      "~/utils/*": ["./utils/*"]
+      "~/assets/*": ["./src/assets/*"],
+      "~/components/*": ["./src/components/*"],
+      "~/routes/*": ["./src/routes/*"],
+      "~/types/*": ["./src/types/*"],
+      "~/utils/*": ["./src/utils/*"],
+      "@shared/*": ["./shared/*"],
     }
   },
-  "include": ["src"]
+  "include": ["src", "shared", "netlify/functions"]
 }
