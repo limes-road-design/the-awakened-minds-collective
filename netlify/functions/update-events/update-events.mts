@@ -4,7 +4,7 @@ import fetch from 'node-fetch'
 
 // Env vars
 const EVENTBRITE_API_KEY = process.env.EVENTBRITE_API_KEY
-const EVENTBRITE_ORG_ID = process.env.EVENTBRITE_ORG_ID
+const EVENTBRITE_ORG_ID = '114025583671'
 const BLOB_STORE_NAME = 'events_data'
 
 interface Event {
